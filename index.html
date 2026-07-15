@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptForge AI - Free AI Prompt Generator</title>
+
+    <meta name="description" content="Generate professional AI prompts for ChatGPT, Gemini, Claude, Midjourney and Veo for free.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>PromptForge AI</h1>
+
+        <p>Create powerful AI prompts in seconds.</p>
+
+        <select id="platform">
+            <option>ChatGPT</option>
+            <option>Gemini</option>
+            <option>Claude</option>
+            <option>Veo</option>
+            <option>Midjourney</option>
+        </select>
+
+        <textarea
+            id="topic"
+            placeholder="Enter your idea..."></textarea>
+
+        <button id="generateBtn">
+            Generate Prompt
+        </button>
+
+        <textarea
+            id="result"
+            readonly
+            placeholder="Your AI prompt will appear here..."></textarea>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
