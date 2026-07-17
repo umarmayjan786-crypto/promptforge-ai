@@ -210,3 +210,27 @@ textarea:focus{
     line-height:1.6;
     text-align:left;
 }
+
+.faq{
+    margin-top:30px;
+}
+
+.faq-item{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,.05);
+}
+
+.faq-item h3{
+    color:#2563eb;
+    margin-bottom:10px;
+}
+
+.faq-item p{
+    color:#555;
+    line-height:1.6;
+    text-align:left;
+} 
