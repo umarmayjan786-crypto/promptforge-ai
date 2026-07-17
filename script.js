@@ -41,3 +41,29 @@ generateBtn.addEventListener("click", async () => {
     }
 
 });
+
+const copyBtn = document.getElementById("copyBtn");
+
+copyBtn.addEventListener("click", async () => {
+
+    const result = document.getElementById("result");
+
+    if (!result.value.trim()) {
+        alert("No prompt to copy!");
+        return;
+    }
+
+    try {
+        await navigator.clipboard.writeText(result.value);
+
+        copyBtn.innerText = "✅ Copied!";
+
+        setTimeout(() => {
+            copyBtn.innerText = "📋 Copy Prompt";
+        }, 2000);
+
+    } catch (err) {
+        alert("Copy failed.");
+    }
+
+});

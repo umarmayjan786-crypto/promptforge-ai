@@ -61,3 +61,21 @@ button{
 button:hover{
     background:#1d4ed8;
 }
+
+#copyBtn{
+    width:100%;
+    margin-top:12px;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#28a745;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#copyBtn:hover{
+    background:#218838;
+}
