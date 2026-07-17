@@ -7,22 +7,19 @@
 
 body{
     background:#f4f7fb;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    margin:0;
     min-height:100vh;
-    padding:20px;
+    padding:30px;
 }
 
 .container{
     background:#fff;
     width:100%;
-    max-width:700px;
+    max-width:1000px;
+    margin:auto;
     padding:30px;
     border-radius:15px;
     box-shadow:0 10px 30px rgba(0,0,0,.1);
-
-    .container{
     animation:fadeIn .5s ease;
 }
 
@@ -35,7 +32,6 @@ body{
         opacity:1;
         transform:translateY(0);
     }
-}
 }
 
 h1{
@@ -233,4 +229,20 @@ textarea:focus{
     color:#555;
     line-height:1.6;
     text-align:left;
+} 
+
+@media(max-width:768px){
+
+.stats{
+    flex-direction:column;
+}
+
+.features{
+    grid-template-columns:1fr;
+}
+
+.container{
+    padding:20px;
+}
+
 } 
