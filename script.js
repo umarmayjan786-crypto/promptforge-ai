@@ -180,3 +180,57 @@ searchBox.addEventListener("input", () => {
     });
 
 });
+
+// =========================
+// TEMPLATE SYSTEM
+// =========================
+
+const templateButtons = document.querySelectorAll(".template-btn");
+const templateSearch = document.getElementById("templateSearch");
+const templateCategory = document.getElementById("templateCategory");
+const topicInput = document.getElementById("topic");
+
+// Click → Auto Fill
+templateButtons.forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        topicInput.value = btn.innerText;
+
+    });
+
+});
+
+// Search + Category Filter
+function filterTemplates(){
+
+    const search = templateSearch.value.toLowerCase();
+    const category = templateCategory.value;
+
+    templateButtons.forEach(btn=>{
+
+        const text = btn.innerText.toLowerCase();
+        const btnCategory = btn.dataset.category;
+
+        const searchMatch = text.includes(search);
+        const categoryMatch =
+            category==="all" ||
+            btnCategory===category;
+
+        if(searchMatch && categoryMatch){
+
+            btn.style.display="inline-block";
+
+        }else{
+
+            btn.style.display="none";
+
+        }
+
+    });
+
+}
+
+templateSearch.addEventListener("input", filterTemplates);
+
+templateCategory.addEventListener("change", filterTemplates);

@@ -70,6 +70,18 @@ Generate professional AI prompts for ChatGPT, Gemini, Claude, Midjourney, Veo, F
 
 <label for="category"><strong>Prompt Category</strong></label>
 
+<h3>📂 Template Categories</h3>
+
+<select id="templateCategory">
+    <option value="all">All Templates</option>
+    <option value="image">🎨 Image</option>
+    <option value="video">🎥 Video</option>
+    <option value="writing">✍️ Writing</option>
+    <option value="coding">💻 Coding</option>
+    <option value="marketing">📈 Marketing</option>
+    <option value="study">📚 Study</option>
+</select>
+
 <select id="category">
     <option>General</option>
     <option>Image Generation</option>
@@ -111,17 +123,33 @@ Generate professional AI prompts for ChatGPT, Gemini, Claude, Midjourney, Veo, F
         YouTube Thumbnail
     </button>
 
-    <button class="template-btn">
-        Blog Writing
-    </button>
+     
 
-    <button class="template-btn">
-        HTML Landing Page
-    </button>
+<button class="template-btn" data-category="image">Realistic Portrait</button>
+<button class="template-btn" data-category="image">YouTube Thumbnail</button>
+<button class="template-btn" data-category="image">Anime Art</button>
 
-    <button class="template-btn">
-        Facebook Ad Copy
-    </button>
+<button class="template-btn" data-category="video">Cinematic Video</button>
+<button class="template-btn" data-category="video">Product Commercial</button>
+<button class="template-btn" data-category="video">Travel Reel</button>
+
+<button class="template-btn" data-category="writing">Blog Writing</button>
+<button class="template-btn" data-category="writing">Story Writing</button>
+<button class="template-btn" data-category="writing">Email Writing</button>
+
+<button class="template-btn" data-category="coding">HTML Landing Page</button>
+<button class="template-btn" data-category="coding">JavaScript App</button>
+<button class="template-btn" data-category="coding">Python Script</button>
+
+<button class="template-btn" data-category="marketing">Facebook Ad</button>
+<button class="template-btn" data-category="marketing">Google Ads</button>
+<button class="template-btn" data-category="marketing">SEO Article</button>
+
+<button class="template-btn" data-category="study">Math Notes</button>
+<button class="template-btn" data-category="study">Exam Preparation</button>
+<button class="template-btn" data-category="study">Study Planner</button>
+
+</div>
 
 </div>
 
