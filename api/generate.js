@@ -4,12 +4,14 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { platform, topic } = req.body;
+    const { platform,category, topic } = req.body;
 
     const prompt = `
 You are an expert AI Prompt Engineer.
 
 Create one professional English prompt for ${platform}.
+Category:
+${category}
 
 User Idea:
 ${topic}

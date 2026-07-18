@@ -32,6 +32,7 @@ const generateBtn = document.getElementById("generateBtn");
 generateBtn.addEventListener("click", async () => {
 
     const platform = document.getElementById("platform").value;
+    const category = document.getElementById("category").value;
     const topic = document.getElementById("topic").value;
     const result = document.getElementById("result");
 
@@ -54,6 +55,7 @@ generateBtn.innerText = "⏳ Generating...";
             },
             body: JSON.stringify({
                 platform,
+                category,
                 topic
             })
         });
