@@ -302,3 +302,37 @@ textarea:focus{
     width:220px;
     max-width:100%;
 }
+
+#templateSearch{
+    width:100%;
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    margin-bottom:15px;
+    font-size:16px;
+}
+
+#templates{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.template-btn{
+    width:auto;
+    padding:10px 18px;
+    background:#eef4ff;
+    color:#2563eb;
+    border:1px solid #2563eb;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+.template-btn:hover{
+    background:#2563eb;
+    color:white;
+    transform:translateY(-2px);
+}

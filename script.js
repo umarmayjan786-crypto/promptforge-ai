@@ -149,3 +149,34 @@ themeBtn.addEventListener("click", () => {
     }
 
 });
+
+const templateButtons = document.querySelectorAll(".template-btn");
+const topicInput = document.getElementById("topic");
+
+templateButtons.forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        topicInput.value = btn.innerText;
+
+    });
+
+});
+
+const searchBox = document.getElementById("templateSearch");
+
+searchBox.addEventListener("input", () => {
+
+    const value = searchBox.value.toLowerCase();
+
+    templateButtons.forEach(btn => {
+
+        if(btn.innerText.toLowerCase().includes(value)){
+            btn.style.display = "inline-block";
+        }else{
+            btn.style.display = "none";
+        }
+
+    });
+
+});
