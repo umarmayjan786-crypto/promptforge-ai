@@ -208,3 +208,79 @@ function filterTemplates(){
 templateSearch.addEventListener("input", filterTemplates);
 
 templateCategory.addEventListener("change", filterTemplates);
+
+// ===========================
+// TOAST
+// ===========================
+
+const toast = document.getElementById("toast");
+
+function showToast(message){
+
+    toast.innerText = message;
+
+    toast.classList.add("show");
+
+    setTimeout(()=>{
+
+        toast.classList.remove("show");
+
+    },2000);
+
+}
+
+// ===========================
+// COPY SUCCESS
+// ===========================
+
+copyBtn.addEventListener("click",()=>{
+
+    showToast("✅ Prompt Copied");
+
+});
+
+// ===========================
+// CLEAR HISTORY
+// ===========================
+
+const clearBtn =
+document.getElementById("clearHistoryBtn");
+
+clearBtn.addEventListener("click",()=>{
+
+    promptHistory=[];
+
+    localStorage.removeItem("promptHistory");
+
+    renderHistory();
+
+    showToast("🗑 History Cleared");
+
+});
+
+// ===========================
+// WORD COUNTER
+// ===========================
+
+const wordCount =
+document.getElementById("wordCount");
+
+const charCount =
+document.getElementById("charCount");
+
+topicInput.addEventListener("input",()=>{
+
+    const text = topicInput.value;
+
+    const words =
+    text.trim()===""
+    ?0
+    :text.trim().split(/\s+/).length;
+
+    wordCount.innerText =
+    "Words: "+words;
+
+    charCount.innerText =
+    "Characters: "+text.length;
+
+});

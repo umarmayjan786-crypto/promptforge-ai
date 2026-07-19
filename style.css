@@ -388,3 +388,51 @@ textarea:focus{
 .dark .template-btn:hover{
     background:#2563eb;
 }
+
+/* ===========================
+   TOAST
+=========================== */
+
+#toast{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    background:#2563eb;
+    color:#fff;
+    padding:14px 22px;
+    border-radius:10px;
+    opacity:0;
+    transition:.3s;
+    pointer-events:none;
+    z-index:9999;
+}
+
+#toast.show{
+    opacity:1;
+}
+
+/* ===========================
+   COUNTER
+=========================== */
+
+.counter{
+    display:flex;
+    justify-content:space-between;
+    margin-top:10px;
+    margin-bottom:18px;
+    color:#666;
+    font-size:14px;
+}
+
+/* ===========================
+   CLEAR BUTTON
+=========================== */
+
+#clearHistoryBtn{
+    background:#dc3545;
+    margin-top:10px;
+}
+
+#clearHistoryBtn:hover{
+    background:#bb2d3b;
+}
