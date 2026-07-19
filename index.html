@@ -70,6 +70,14 @@ Generate professional AI prompts for ChatGPT, Gemini, Claude, Midjourney, Veo, F
 
 <label for="category"><strong>Prompt Category</strong></label>
 
+<h2 class="section-title">🔥 Popular Templates</h2>
+
+<div id="popularTemplates" class="popular-list"></div>
+
+<h2 class="section-title">🕒 Recent Templates</h2>
+
+<div id="recentTemplates" class="popular-list"></div>
+
 <h3>📂 Template Categories</h3>
 
 <select id="templateCategory">
@@ -111,49 +119,72 @@ Generate professional AI prompts for ChatGPT, Gemini, Claude, Midjourney, Veo, F
 
 <div id="templates">
 
-    <button class="template-btn">
+<div class="template-box">
+    <button class="template-btn" data-category="image">
         Realistic Portrait
     </button>
 
-    <button class="template-btn">
-        Cinematic Video
-    </button>
+    <button class="fav-btn">⭐</button>
+</div>
 
-    <button class="template-btn">
+<div class="template-box">
+    <button class="template-btn" data-category="image">
         YouTube Thumbnail
     </button>
 
-     
+    <button class="fav-btn">⭐</button>
+</div>
 
-<button class="template-btn" data-category="image">Realistic Portrait</button>
-<button class="template-btn" data-category="image">YouTube Thumbnail</button>
-<button class="template-btn" data-category="image">Anime Art</button>
+<div class="template-box">
+    <button class="template-btn" data-category="image">
+        Anime Art
+    </button>
 
-<button class="template-btn" data-category="video">Cinematic Video</button>
-<button class="template-btn" data-category="video">Product Commercial</button>
-<button class="template-btn" data-category="video">Travel Reel</button>
+    <button class="fav-btn">⭐</button>
+</div>
+    <div class="template-box">
+    <button class="template-btn" data-category="video">
+        Cinematic Video
+    </button>
+    <button class="fav-btn">⭐</button>
+</div>
 
-<button class="template-btn" data-category="writing">Blog Writing</button>
-<button class="template-btn" data-category="writing">Story Writing</button>
-<button class="template-btn" data-category="writing">Email Writing</button>
+<div class="template-box">
+    <button class="template-btn" data-category="video">
+        Product Commercial
+    </button>
+    <button class="fav-btn">⭐</button>
+</div>
 
-<button class="template-btn" data-category="coding">HTML Landing Page</button>
-<button class="template-btn" data-category="coding">JavaScript App</button>
-<button class="template-btn" data-category="coding">Python Script</button>
+<div class="template-box">
+    <button class="template-btn" data-category="video">
+        Travel Reel
+    </button>
+    <button class="fav-btn">⭐</button>
+</div>
 
-<button class="template-btn" data-category="marketing">Facebook Ad</button>
-<button class="template-btn" data-category="marketing">Google Ads</button>
-<button class="template-btn" data-category="marketing">SEO Article</button>
+<div class="template-box">
+    <button class="template-btn" data-category="writing">
+        Blog Writing
+    </button>
+    <button class="fav-btn">⭐</button>
+</div>
 
-<button class="template-btn" data-category="study">Math Notes</button>
-<button class="template-btn" data-category="study">Exam Preparation</button>
-<button class="template-btn" data-category="study">Study Planner</button>
+<div class="template-box">
+    <button class="template-btn" data-category="writing">
+        Story Writing
+    </button>
+    <button class="fav-btn">⭐</button>
+</div>
 
+<div class="template-box">
+    <button class="template-btn" data-category="writing">
+        Email Writing
+    </button>
+    <button class="fav-btn">⭐</button>
 </div>
 
 </div>
-
-
 
 
         <textarea
