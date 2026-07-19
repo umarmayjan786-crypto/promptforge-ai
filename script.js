@@ -70,19 +70,22 @@ generateBtn.innerText = "⏳ Generating...";
         generateBtn.disabled = false;
         generateBtn.innerText = "🚀 Generate Prompt";
 
-        promptHistory.unshift(data.result);
+       if (data.result) {
 
-promptHistory = promptHistory.slice(0,10);
+    promptHistory.unshift(data.result);
 
-localStorage.setItem("promptHistory", JSON.stringify(promptHistory));
+    promptHistory = promptHistory.slice(0, 10);
 
-renderHistory();
+    localStorage.setItem(
+        "promptHistory",
+        JSON.stringify(promptHistory)
+    );
 
-if(promptHistory.length===0){
+    renderHistory();
 
-    historyBox.innerHTML="<p>No prompts yet.</p>";
+} else {
 
-    return;
+    historyBox.innerHTML = "<p>No prompts yet.</p>";
 
 }
 
@@ -150,36 +153,7 @@ themeBtn.addEventListener("click", () => {
 
 });
 
-const templateButtons = document.querySelectorAll(".template-btn");
-const topicInput = document.getElementById("topic");
 
-templateButtons.forEach(btn => {
-
-    btn.addEventListener("click", () => {
-
-        topicInput.value = btn.innerText;
-
-    });
-
-});
-
-const searchBox = document.getElementById("templateSearch");
-
-searchBox.addEventListener("input", () => {
-
-    const value = searchBox.value.toLowerCase();
-
-    templateButtons.forEach(btn => {
-
-        if(btn.innerText.toLowerCase().includes(value)){
-            btn.style.display = "inline-block";
-        }else{
-            btn.style.display = "none";
-        }
-
-    });
-
-});
 
 // =========================
 // TEMPLATE SYSTEM
