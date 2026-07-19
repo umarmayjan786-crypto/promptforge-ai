@@ -436,3 +436,26 @@ textarea:focus{
 #clearHistoryBtn:hover{
     background:#bb2d3b;
 }
+#downloadBtn{
+    background:#6f42c1;
+}
+
+#downloadBtn:hover{
+    background:#5936a2;
+}
+
+#regenerateBtn{
+    background:#fd7e14;
+}
+
+#regenerateBtn:hover{
+    background:#dc6b10;
+}
+
+#clearTopicBtn{
+    background:#6c757d;
+}
+
+#clearTopicBtn:hover{
+    background:#5c636a;
+}

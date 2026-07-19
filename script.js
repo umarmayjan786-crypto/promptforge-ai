@@ -284,3 +284,69 @@ topicInput.addEventListener("input",()=>{
     "Characters: "+text.length;
 
 });
+
+
+// ===========================
+// DOWNLOAD PROMPT
+// ===========================
+
+const downloadBtn =
+document.getElementById("downloadBtn");
+
+downloadBtn.addEventListener("click",()=>{
+
+    const text=result.value;
+
+    if(!text.trim()){
+
+        showToast("No Prompt");
+
+        return;
+
+    }
+
+    const blob=new Blob([text],{type:"text/plain"});
+
+    const a=document.createElement("a");
+
+    a.href=URL.createObjectURL(blob);
+
+    a.download="PromptForge-Prompt.txt";
+
+    a.click();
+
+    showToast("Prompt Downloaded");
+
+});
+
+// ===========================
+// GENERATE AGAIN
+// ===========================
+
+const regenerateBtn=
+document.getElementById("regenerateBtn");
+
+regenerateBtn.addEventListener("click",()=>{
+
+    generateBtn.click();
+
+});
+
+// ===========================
+// CLEAR TOPIC
+// ===========================
+
+const clearTopicBtn=
+document.getElementById("clearTopicBtn");
+
+clearTopicBtn.addEventListener("click",()=>{
+
+    topicInput.value="";
+
+    wordCount.innerText="Words: 0";
+
+    charCount.innerText="Characters: 0";
+
+    showToast("Topic Cleared");
+
+});
