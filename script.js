@@ -504,7 +504,7 @@ favButtons.forEach(btn => {
     btn.addEventListener("click", () => {
 
         const name =
-            btn.previousElementSibling.innerText;
+            const name = btn.closest(".template-box").querySelector(".template-btn").innerText.trim();
 
         if (!favorites.includes(name)) {
 
