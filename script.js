@@ -285,37 +285,49 @@ topicInput.addEventListener("input",()=>{
 
 });
 
+const downloadBtn = document.getElementById("downloadBtn");
 
-// ===========================
-// DOWNLOAD PROMPT
-// ===========================
+downloadBtn.addEventListener("click", () => {
 
-const downloadBtn =
-document.getElementById("downloadBtn");
+    const text = result.value;
 
-downloadBtn.addEventListener("click",()=>{
-
-    const text=result.value;
-
-    if(!text.trim()){
-
+    if (!text.trim()) {
         showToast("No Prompt");
-
         return;
-
     }
 
-    const blob=new Blob([text],{type:"text/plain"});
+    const choice = confirm("OK = PDF\nCancel = TXT");
 
-    const a=document.createElement("a");
+    if (choice) {
+        const { jsPDF } = window.jspdf;
 
-    a.href=URL.createObjectURL(blob);
+        const doc = new jsPDF();
 
-    a.download="PromptForge-Prompt.txt";
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(12);
 
-    a.click();
+        const lines = doc.splitTextToSize(text, 180);
 
-    showToast("Prompt Downloaded");
+        doc.text(lines, 10, 10);
+
+        doc.save("PromptForge-Prompt.pdf");
+
+        showToast("PDF Downloaded");
+
+    } else {
+
+        const blob = new Blob([text], { type: "text/plain" });
+
+        const a = document.createElement("a");
+
+        a.href = URL.createObjectURL(blob);
+
+        a.download = "PromptForge-Prompt.txt";
+
+        a.click();
+
+        showToast("TXT Downloaded");
+    }
 
 });
 
