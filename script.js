@@ -351,99 +351,6 @@ clearTopicBtn.addEventListener("click",()=>{
 
 });
 
-// ==========================
-// POPULAR + RECENT
-// ==========================
-
-const popularTemplates = [
-"Realistic Portrait",
-"Cinematic Video",
-"Facebook Ad",
-"Blog Writing",
-"HTML Landing Page"
-];
-
-const popularBox =
-document.getElementById("popularTemplates");
-
-const recentBox =
-document.getElementById("recentTemplates");
-
-let recent =
-JSON.parse(localStorage.getItem("recent")) || [];
-
-function renderPopular(){
-
-popularBox.innerHTML="";
-
-popularTemplates.forEach(name=>{
-
-const div=document.createElement("div");
-
-div.className="popular-item";
-
-div.innerText=name;
-
-div.onclick=()=>{
-
-topicInput.value=name;
-
-};
-
-popularBox.appendChild(div);
-
-});
-
-}
-
-function renderRecent(){
-
-recentBox.innerHTML="";
-
-recent.forEach(name=>{
-
-const div=document.createElement("div");
-
-div.className="popular-item";
-
-div.innerText=name;
-
-div.onclick=()=>{
-
-topicInput.value=name;
-
-};
-
-recentBox.appendChild(div);
-
-});
-
-}
-
-templateButtons.forEach(btn=>{
-
-btn.addEventListener("click",()=>{
-
-recent.unshift(btn.innerText);
-
-recent=[...new Set(recent)];
-
-recent=recent.slice(0,5);
-
-localStorage.setItem(
-"recent",
-JSON.stringify(recent)
-);
-
-renderRecent();
-
-});
-
-});
-
-renderPopular();
-
-renderRecent();
 // =============================
 // FAVORITES + POPULAR + RECENT
 // =============================
@@ -503,8 +410,7 @@ favButtons.forEach(btn => {
 
     btn.addEventListener("click", () => {
 
-        const name =
-            const name = btn.closest(".template-box").querySelector(".template-btn").innerText.trim();
+        const name = btn.closest(".template-box").querySelector(".template-btn").innerText.trim();
 
         if (!favorites.includes(name)) {
 
