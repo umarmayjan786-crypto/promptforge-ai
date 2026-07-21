@@ -444,3 +444,109 @@ renderRecent();
 renderPopular();
 
 renderRecent();
+// =============================
+// FAVORITES + POPULAR + RECENT
+// =============================
+
+const favButtons = document.querySelectorAll(".fav-btn");
+const popularBox = document.getElementById("popularTemplates");
+const recentBox = document.getElementById("recentTemplates");
+
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+let recent = JSON.parse(localStorage.getItem("recentTemplates")) || [];
+
+function renderPopular() {
+
+    popularBox.innerHTML = "";
+
+    favorites.forEach(name => {
+
+        const btn = document.createElement("button");
+
+        btn.textContent = name;
+
+        btn.onclick = () => {
+
+            document.getElementById("topic").value = name;
+
+        };
+
+        popularBox.appendChild(btn);
+
+    });
+
+}
+
+function renderRecent() {
+
+    recentBox.innerHTML = "";
+
+    recent.forEach(name => {
+
+        const btn = document.createElement("button");
+
+        btn.textContent = name;
+
+        btn.onclick = () => {
+
+            document.getElementById("topic").value = name;
+
+        };
+
+        recentBox.appendChild(btn);
+
+    });
+
+}
+
+favButtons.forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        const name =
+            btn.previousElementSibling.innerText;
+
+        if (!favorites.includes(name)) {
+
+            favorites.unshift(name);
+
+            favorites = favorites.slice(0, 8);
+
+            localStorage.setItem(
+                "favorites",
+                JSON.stringify(favorites)
+            );
+
+            renderPopular();
+
+        }
+
+    });
+
+});
+
+templateButtons.forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        const name = btn.innerText;
+
+        recent = recent.filter(x => x !== name);
+
+        recent.unshift(name);
+
+        recent = recent.slice(0, 8);
+
+        localStorage.setItem(
+            "recentTemplates",
+            JSON.stringify(recent)
+        );
+
+        renderRecent();
+
+    });
+
+});
+
+renderPopular();
+renderRecent();
